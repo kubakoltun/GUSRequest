@@ -7,6 +7,6 @@ Funkcja po otrzymaniu odpowiedzi przypisze do utworzonych zmiennych odpowiednie 
 Informacje są parsowane poprzez szukanie odpowiednich tagów w odpowiedzi XML.
 Uzupełnione zmienne są przekazywane w callback'u w taki sposób, aby można było ich użyć w zależności od wybranego scenariusza. 
 
-Kod powstał z intencją funckjonowania na środowisku HubSpot.
+Kod powstał z intencją funckjonowania na środowisku HubSpot, Node.js.
 W tym wypadku jest to uzupełnienie workflow o podane zmienne. 
 Celem workflow'u jest automatyczne uzupełnienie kontakt o brakujące informacje.
