@@ -9,4 +9,4 @@ Uzupełnione zmienne są przekazywane w callback'u w taki sposób, aby można by
 
 Kod powstał z intencją funckjonowania na środowisku HubSpot, Node.js.
 W tym wypadku jest to uzupełnienie workflow o podane zmienne. 
-Celem workflow'u jest automatyczne uzupełnienie kontakt o brakujące informacje.
+Celem workflow'u jest automatyczne uzupełnienie kontaktu o brakujące informacje.
