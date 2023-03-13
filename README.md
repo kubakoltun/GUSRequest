@@ -1,12 +1,12 @@
 # GUS-Request
 
-GUS - Główny Urząd Statystyczny
-Funkcja służy do wyciągania informacji na temat wprowadzonej spółki.
-Podany numer NIP jest podstawą do zapytania wysyłanego do GUSu, który w odpowiedzi zwróci zestaw danych w formacie XML.
-Funkcja po otrzymaniu odpowiedzi przypisze do utworzonych zmiennych odpowiednie informacje dotyczące spółki.
-Informacje są parsowane poprzez szukanie odpowiednich tagów w odpowiedzi XML.
-Uzupełnione zmienne są przekazywane w callback'u w taki sposób, aby można było ich użyć w zależności od wybranego scenariusza. 
+This code is a Node.js script that uses the SOAP web service provided by the Polish government to retrieve information about a company based on its NIP (tax identification number).
 
-Kod powstał z intencją funckjonowania na środowisku HubSpot, Node.js.
-W tym wypadku jest to uzupełnienie workflow o podane zmienne. 
-Celem workflow'u jest automatyczne uzupełnienie kontaktu o brakujące informacje.
+The script sends SOAP requests to the web service to perform the following actions:
+
+Authenticate the user with a provided API key using the "Zaloguj" method.
+Retrieve information about the company with the provided NIP using the "DaneSzukajPodmioty" method.
+Logout the user using the "Wyloguj" method.
+The retrieved information about the company is stored in variables for later use.
+
+The script uses the "request" package to make HTTP requests to the web service. The response body is parsed using string manipulation functions. The script is triggered by an event and returns the retrieved company information as a callback function.
