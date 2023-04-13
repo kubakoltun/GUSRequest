@@ -1,10 +1,6 @@
 const request = require("request");
-//const hubspot = require('@hubspot/api-client');
 
 exports.main = (event, callback) => {
-
-  //const hubspotClient = new hubspot.Client({ accessToken: process.env.nsc });
-
   const nip = event.inputFields['nip'];
   let klucz = 'abcde12345abcde12345';
   let api = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc';
@@ -91,12 +87,9 @@ exports.main = (event, callback) => {
         },
          body: zapytanieNIP
     },
-    function(error, response, body){
-        //console.log(`odpowiedz pobierz kod ${response.statusCode}`);
-        //console.log(`odpowiedz pobierz ${body}`);
-        //console.log(`odpowiedz pobierz blad ${error}`);
-      
-		parser = body.split("Regon&gt;");
+    function(error, response, body) {      
+	parser = body.split("Regon&gt;");
+	    
         if (parser[1] != undefined) {
           regon = parser[1].substring(0, parser[1].length-5);
         }
@@ -195,10 +188,8 @@ exports.main = (event, callback) => {
         },
          body: zapytanieWyloguj
     },
-    function(error, response, body){
-        //console.log(`logout response code ${response.statusCode}`);
-        //console.log(`logout response ${body}`);
-        //console.log(`logout error ${error}`);
+    function(error, response, body) {
+        console.log(`logout response code ${response.statusCode}`);
     });
   });
 }
