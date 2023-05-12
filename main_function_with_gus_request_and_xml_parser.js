@@ -59,7 +59,7 @@ exports.main = (event, callback) => {
                           </soap:Body>
                           </soap:Envelope>`;
 
-  //zaloguj
+  //login
   request.post({
       url:api,
       method:"POST",
@@ -68,16 +68,13 @@ exports.main = (event, callback) => {
       },
        body: zapytaniePortal
   },
-  function(error, response, body){
-    //console.log(`odpowiedz zaloguj kod ${response.statusCode}`);
-    //console.log(`odpowiedz zaloguj ${body}`);
-    //console.log(odpowiedz zaloguj blad ${error}`);
+  function(error, response, body) {
     idArray = body.split("ZalogujResult>");
     id = idArray[1].substring(0, idArray[1].length-2);
     console.log(`zaloguj id przed substring ${idArray[1]}`);
     console.log(id);
 
-    //pobierz dane
+    //get data
     request.post({
         url:api,
         method:"POST",
