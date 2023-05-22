@@ -8,18 +8,18 @@ exports.main = (event, callback) => {
   let id = "";
   let parser = "";
 
-    let regon = "";
-    let nazwaFirmy = "";
-    let wojewodztwo = "";
-    let powiat = "";
-    let gmina = "";
-    let miejscowosc = "";
-    let kodPocztowy = "";
-    let ulica = "";
-    let nrNieruchomosci = "";
-    let nrLokalu = "";
-    let dataZakonczeniaDzialanosci = "";
-    let miejscowoscPoczty = "";
+  let regon = "";
+  let nazwaFirmy = "";
+  let wojewodztwo = "";
+  let powiat = "";
+  let gmina = "";
+  let miejscowosc = "";
+  let kodPocztowy = "";
+  let ulica = "";
+  let nrNieruchomosci = "";
+  let nrLokalu = "";
+  let dataZakonczeniaDzialanosci = "";
+  let miejscowoscPoczty = "";
 
   let zapytaniePortal = `<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://CIS/BIR/PUBL/2014/07">
                   <soap:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
