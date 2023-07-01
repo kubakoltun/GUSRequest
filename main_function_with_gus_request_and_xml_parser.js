@@ -2,6 +2,7 @@ const request = require("request");
 
 exports.main = (event, callback) => {
   const nip = event.inputFields['nip'];
+	
   let klucz = 'abcde12345abcde12345';
   let api = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc';
   let idArray = "";
@@ -59,7 +60,7 @@ exports.main = (event, callback) => {
                           </soap:Body>
                           </soap:Envelope>`;
 
-  //login
+  // login
   request.post({
       url:api,
       method:"POST",
@@ -74,7 +75,7 @@ exports.main = (event, callback) => {
     console.log(`zaloguj id przed substring ${idArray[1]}`);
     console.log(id);
 
-    //get data
+    // get data
     request.post({
         url:api,
         method:"POST",
@@ -176,7 +177,7 @@ exports.main = (event, callback) => {
         });
       });
 
-      //logout
+      // logout
       request.post({
         url:api,
         method:"POST",
