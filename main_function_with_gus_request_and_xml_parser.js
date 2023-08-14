@@ -69,6 +69,7 @@ exports.main = (event, callback) => {
       },
        body: zapytaniePortal
   },
+	       
   function(error, response, body) {
     idArray = body.split("ZalogujResult>");
     id = idArray[1].substring(0, idArray[1].length-2);
@@ -85,9 +86,9 @@ exports.main = (event, callback) => {
         },
          body: zapytanieNIP
     },
+		 
     function(error, response, body) {      
 	parser = body.split("Regon&gt;");
-	    
         if (parser[1] != undefined) {
           regon = parser[1].substring(0, parser[1].length-5);
         }
@@ -142,7 +143,7 @@ exports.main = (event, callback) => {
         console.log(nrNieruchomosci);
       
         parser = body.split("NrLokalu&gt;");
-		if (parser[1] != undefined) {
+	if (parser[1] != undefined) {
           nrLokalu = parser[1].substring(0, parser[1].length-5);
         }
         console.log(nrLokalu);
@@ -184,8 +185,9 @@ exports.main = (event, callback) => {
         headers:{
             'Content-Type': 'application/soap+xml; charset=UTF-8;',
         },
-         body: zapytanieWyloguj
+        body: zapytanieWyloguj
     },
+		   
     function(error, response, body) {
         console.log(`logout response code ${response.statusCode}`);
     });
